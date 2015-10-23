@@ -1,4 +1,4 @@
-<domain type='kvm'>
+<domain type='debian'>
 
   <name>bastion</name>
   <memory unit="MiB">256</memory>
@@ -19,7 +19,7 @@
 
   <sysinfo type='smbios'>
     <bios>
-      <entry name='vendor'>Jive</entry>
+      <entry name='vendor'>Jive Communications</entry>
     </bios>
     <system>
       <entry name='manufacturer'>Debian</entry>
@@ -52,15 +52,15 @@
     </disk>
 
     <interface type='bridge'>
-      <mac address='DE:AD:BE:EF:0C:00' />
-      <source bridge='br0' />
+      <mac address='' />
+      <source bridge='br13' />
       <model type='virtio' />
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0' />
     </interface>
 
     <interface type='bridge'>
-      <mac address='DE:AD:BE:EF:0C:01' />
-      <source bridge='br1' />
+      <mac address='' />
+      <source bridge='br14' />
       <model type='virtio' />
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0' />
     </interface>
