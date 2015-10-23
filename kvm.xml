@@ -1,0 +1,81 @@
+<domain type='kvm'>
+
+  <name>bastion</name>
+  <memory unit="MiB">256</memory>
+  <vcpu placement='static' cpuset="1-4,^3,6" current="2">2</vcpu>
+  <os>
+    <type arch='x86_64' machine='pc-1.1'>hvm</type>
+    <kernel>/boot/vmlinuz-3.2.0-4-amd64</kernel>
+    <initrd>/boot/initrd.img-3.2.0-4-amd64</initrd>
+    <cmdline>ro root=/dev/vda console=tty0 console=ttyS0,115200</cmdline>
+  </os>
+
+  <cpu mode="host-passthrough" match='exact'>
+    <model fallback='allow'>core2duo</model>
+    <vendor>Intel</vendor>
+    <topology sockets='1' cores='2' threads='1' />
+    <feature policy='disable' name='lahf_lm' />
+  </cpu>
+
+  <sysinfo type='smbios'>
+    <bios>
+      <entry name='vendor'>Jive</entry>
+    </bios>
+    <system>
+      <entry name='manufacturer'>Debian</entry>
+      <entry name='sku'>VM.V5.1</entry>
+      <entry name='product'>JInst</entry>
+      <entry name='version'>Wheezy</entry>
+    </system>
+  </sysinfo>
+
+  <features>
+    <acpi />
+    <apic />
+    <pae />
+  </features>
+
+  <clock offset='utc' />
+
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>restart</on_crash>
+
+  <devices>
+
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='qcow2' cache='none' io='threads' />
+      <source file='/srv/images/bastion.img' />
+      <target dev='vda' bus='virtio' />
+      <shareable />
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0' />
+    </disk>
+
+    <interface type='bridge'>
+      <mac address='DE:AD:BE:EF:0C:00' />
+      <source bridge='br0' />
+      <model type='virtio' />
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0' />
+    </interface>
+
+    <interface type='bridge'>
+      <mac address='DE:AD:BE:EF:0C:01' />
+      <source bridge='br1' />
+      <model type='virtio' />
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0' />
+    </interface>
+
+    <serial type='pty'>
+      <target port='0' />
+    </serial>
+
+    <console type='pty'>
+      <target port='0' />
+    </console>
+
+    <memballoon model='virtio'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x0' />
+    </memballoon>
+  </devices>
+
+</domain>
