@@ -45,7 +45,7 @@
 
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2' cache='none' io='threads' />
-      <source file='/srv/images/bastion.img' />
+      <source file='/srv/images/VX-Pulse.img' />
       <target dev='vda' bus='virtio' />
       <shareable />
       <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0' />
