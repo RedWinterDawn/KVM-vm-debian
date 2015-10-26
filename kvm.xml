@@ -2,7 +2,7 @@
 
   <name>VXPulse</name>
   <memory unit="MiB">2048</memory>
-  <vcpu placement='static' cpuset="1-4,^3,6" current="2">2</vcpu>
+  <vcpu placement='static' cpuset="12" current="2">2</vcpu>
   <os>
     <type arch='x86_64' machine='pc-1.1'>hvm</type>
     <kernel>/boot/vmlinuz-3.2.0-4-amd64</kernel>
