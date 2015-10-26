@@ -23,7 +23,7 @@
     </bios>
     <system>
       <entry name='manufacturer'>Debian</entry>
-      <entry name='sku'>VM.V5.1</entry>
+      <entry name='sku'>4.1.6</entry>
       <entry name='product'>JInst</entry>
       <entry name='version'>Wheezy</entry>
     </system>
