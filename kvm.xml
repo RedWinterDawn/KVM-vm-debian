@@ -1,6 +1,6 @@
 <domain type='debian'>
 
-  <name>bastion</name>
+  <name>VXPulse</name>
   <memory unit="MiB">256</memory>
   <vcpu placement='static' cpuset="1-4,^3,6" current="2">2</vcpu>
   <os>
