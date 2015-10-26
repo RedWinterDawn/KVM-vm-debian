@@ -1,7 +1,7 @@
 <domain type='debian'>
 
   <name>VXPulse</name>
-  <memory unit="MiB">256</memory>
+  <memory unit="MiB">2048</memory>
   <vcpu placement='static' cpuset="1-4,^3,6" current="2">2</vcpu>
   <os>
     <type arch='x86_64' machine='pc-1.1'>hvm</type>
@@ -53,14 +53,14 @@
 
     <interface type='bridge'>
       <mac address='' />
-      <source bridge='br13' />
+      <source bridge='br12' />
       <model type='virtio' />
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0' />
     </interface>
 
     <interface type='bridge'>
       <mac address='' />
-      <source bridge='br14' />
+      <source bridge='br12' />
       <model type='virtio' />
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0' />
     </interface>
