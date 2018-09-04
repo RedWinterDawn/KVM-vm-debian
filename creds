@@ -1,0 +1,15 @@
+ssh bastion
+ssh root@bm7.ops
+
+ssh bastion
+ssh root@172.31.101.1
+
+cd /domains/
+vi bastion.xml
+
+
+NEW
+ssh bastion
+ssh root@bm3.pvu
+1c.pievij.ten$
+

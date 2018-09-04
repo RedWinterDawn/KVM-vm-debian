@@ -1,4 +1,4 @@
-<domain type='debian'>
+<domain type='kvm'>
 
   <name>VXPulse</name>
   <memory unit="MiB">2048</memory>
